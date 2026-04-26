@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AJAX Data Fetch</title>
+</head>
+
+<body>
+
+<h2>Student Records</h2>
+
+<button onclick="loadData()">Load Data</button>
+
+<br><br>
+
+<table border="1" cellpadding="10">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Title</th>
+            <th>Total</th>
+            <th>Remark</th>
+        </tr>
+    </thead>
+
+    <tbody id="data"></tbody>
+</table>
+
+<script>
+function loadData() {
+
+    fetch("http://172.16.5.154:4000/api/getAll/harshawar")
+    .then(response => response.json())
+    .then(data => {
+
+        let output = "";
+
+        data.forEach(item => {
+            output += `
+            <tr>
+                <td>${item.Name}</td>
+                <td>${item.Title}</td>
+                <td>${item.Total}</td>
+                <td>${item.Remark}</td>
+            </tr>
+            `;
+        });
+
+        document.getElementById("data").innerHTML = output;
+    })
+    .catch(error => {
+        console.log("Error:", error);
+        alert("Failed to fetch data");
+    });
+}
+</script>
+
+</body>
+</html>

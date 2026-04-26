@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Task Manager</title>
+    <title>Task Manager</title>
 </head>
 
 <body>
@@ -17,16 +17,29 @@
 
 <script>
 function addTask() {
+
     let task = document.getElementById("taskInput").value;
 
-    if (task === "") return;
+    if (task === "") {
+        alert("Please enter a task");
+        return;
+    }
 
+    // create list item
     let li = document.createElement("li");
-    li.textContent = task;
+
+    li.innerHTML = task + ' <button onclick="deleteTask(this)">Delete</button>';
 
     document.getElementById("taskList").appendChild(li);
 
+    // clear input box
     document.getElementById("taskInput").value = "";
+}
+
+// delete task function
+function deleteTask(btn) {
+    let li = btn.parentElement;
+    li.remove();
 }
 </script>
 
