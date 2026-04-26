@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Effects Demo</title>
+    
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            margin-top: 20px;
+            text-align: center;
+            line-height: 200px;
+            font-weight: bold;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>jQuery Hide, Show, Toggle & Animation</h2>
+
+<!-- Buttons -->
+<button id="hideBtn">Hide</button>
+<button id="showBtn">Show</button>
+<button id="toggleBtn">Toggle</button>
+<button id="fadeBtn">Fade Toggle</button>
+<button id="slideBtn">Slide Toggle</button>
+<button id="animateBtn">Animate</button>
+
+<!-- Box -->
+<div id="box">Hello</div>
+
+<script>
+$(document).ready(function(){
+
+    // Hide
+    $("#hideBtn").click(function(){
+        $("#box").hide();
+    });
+
+    // Show
+    $("#showBtn").click(function(){
+        $("#box").show();
+    });
+
+    // Toggle
+    $("#toggleBtn").click(function(){
+        $("#box").toggle();
+    });
+
+    // Fade Effect
+    $("#fadeBtn").click(function(){
+        $("#box").fadeToggle();
+    });
+
+    // Slide Effect
+    $("#slideBtn").click(function(){
+        $("#box").slideToggle();
+    });
+
+    // Animation
+    $("#animateBtn").click(function(){
+        $("#box").animate({
+            left: '250px',
+            height: '300px',
+            width: '300px'
+        });
+    });
+
+});
+</script>
+
+</body>
+</html>

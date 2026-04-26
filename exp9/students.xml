@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="students.xsl"?>
+
+<students>
+    <student>
+        <name>Shravani</name>
+        <rollno>101</rollno>
+        <marks>85</marks>
+    </student>
+
+    <student>
+        <name>Neha</name>
+        <rollno>102</rollno>
+        <marks>90</marks>
+    </student>
+
+    <student>
+        <name>Aryan</name>
+        <rollno>103</rollno>
+        <marks>78</marks>
+    </student>
+</students>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>City & Monument</title>
+</head>
+
+<body>
+
+<h3>Select a City</h3>
+
+<select id="city" onchange="showMonument()">
+<option value="">--Select City--</option>
+<option value="Mumbai">Mumbai</option>
+<option value="Pune">Pune</option>
+<option value="Delhi">Delhi</option>
+<option value="Agra">Agra</option>
+</select>
+
+<br><br>
+<p id="output"></p>
+
+<script>
+function showMonument() {
+    let city = document.getElementById("city").value;
+    let monument = "";
+
+    if (city === "Mumbai") {
+        monument = "Gateway of India";
+    } else if (city === "Pune") {
+        monument = "Shaniwar Wada";
+    } else if (city === "Delhi") {
+        monument = "India Gate";
+    } else if (city === "Agra") {
+        monument = "Taj Mahal";
+    }
+
+    if (monument !== "") {
+        document.getElementById("output").innerHTML =
+            "Famous Monument: <b>" + monument + "</b>";
+    } else {
+        document.getElementById("output").innerHTML = "";
+    }
+}
+</script>
+
+</body>
+</html>
